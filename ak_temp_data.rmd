@@ -1,0 +1,19 @@
+---
+output: html_document
+---
+
+This R Markdown document displays some temperature data from NOAA.
+
+Summary of data set:
+
+```{r}
+source("plot_files.r")
+dataset=ReadData(list.files(pattern="CRND.*txt"),ReadHeaders("HEADERS.txt"))
+summary(dataset$T_DAILY_MAX)
+```
+
+Graphical output:
+
+```{r}
+PlotData("HEADERS.txt",list.files(pattern="CRND.*txt"))
+```
